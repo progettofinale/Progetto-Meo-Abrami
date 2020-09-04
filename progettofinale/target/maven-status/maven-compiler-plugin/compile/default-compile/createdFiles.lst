@@ -1,0 +1,9 @@
+com\ric\fab\data\DataBase.class
+com\ric\fab\ProgettoApplication.class
+com\ric\fab\mycontroller\IndexController.class
+com\ric\fab\fileReader\ClasseFile.class
+com\ric\fab\data\FileData.class
+com\ric\fab\utils\Output.class
+com\ric\fab\utils\Utils.class
+com\ric\fab\data\FolderData.class
+com\ric\fab\mycontroller\FinalController.class
