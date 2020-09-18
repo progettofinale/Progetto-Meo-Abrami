@@ -27,7 +27,7 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
 ## Rotte
 <blockquote><p><strong>POST</strong>/data</blockquote>
     /data restituisce tutti gli elementi del database 
-   blockquote> <p><strong>POST</strong>/data/{filtro per il tipo}</blockquote>
+   <blockquote> <p><strong>POST</strong>/data/{filtro per il tipo}</blockquote>
     /data restituisce tutti gli elementi del database del tipo richiesto
       <blockquote><p><strong>POST</strong>/data/{filtro per il tipo}/sizes/{filtro per la dimensione}</blockquote>
          /data restituisce tutti gli elementi del database del tipo richiesto con le dimensioni indicate </blockquote>
