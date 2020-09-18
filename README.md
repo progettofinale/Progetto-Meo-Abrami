@@ -5,7 +5,7 @@ In seguito a una richiesta al servizio i risultati vengono rappresanti mediante 
 Nello specifico il formato di ogni singolo elemento è il seguente:</p>
 <pre><code>{
 
-}</code><pre>
+}</code></pre>
 
 ## rotte
 <blockquote><p><strong>POST</strong>/data</blockquote>
@@ -14,7 +14,7 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
     /data restituisce tutti gli elementi del database del tipo richiesto
       <blockquote><p><strong>POST</strong>/data/{filtro per il tipo}/sizes/{filtro per la dimensione}</blockquote>
          /data restituisce tutti gli elementi del database del tipo richiesto con le dimensioni indicate </blockquote>
-   <blockquote><p><strong>POST</strong>/infofile/{/nomefile}
+   <blockquote><p><strong>POST</strong>/infofile/{/nomefile}</blockquote>
     /infofile restituisce le informazioni del file
   
   </div> </div>
