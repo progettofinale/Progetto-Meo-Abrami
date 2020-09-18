@@ -13,6 +13,22 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
 	"durata":0
 }</code></pre>
 
+Un esempio di richiesta con filtro è il seguente:post /data/filter={"$eq":"photo"}</p>
+<pre><code>{
+        "nome":"img001.jpeg",
+	"tipo":"photo",
+	"size":86863,
+	"modifica":"2019-10-12T09:57:15Z",
+	"altezza":701,
+	"lunghezza":1121,
+	"durata":0
+},
+ecc..
+</code></pre>
+Altre opzioni di rotte con filtri sono:   post /data/filter={"$not":"photo"}
+                                          post /data/foto/sizes/filter={"$gt":3}
+
+
 <p> in particolare: </p>
 <ul>
     <li><strong>nome</strong> rappresenta il nome del file</li>
