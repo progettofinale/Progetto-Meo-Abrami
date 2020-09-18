@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.ric.fab"},{"l":"com.ric.fab.data"},{"l":"com.ric.fab.fileReader"},{"l":"com.ric.fab.myController"},{"l":"com.ric.fab.Statistiche"},{"l":"com.ric.fab.utils"}]
