@@ -8,20 +8,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.net.MalformedURLException;
 import java.util.Scanner;
 
-/**@autor Riccardo&Fabio
+/**@author macbookpro
  * @since 2020/09/15
  * @version 3
- * <h1>progetto application</h1>
+ * progetto application
  * il programma progettofinale implementa un' applicaione che controlla il contenuto di un dropbox e esegue operazioni di filtri e stats su di esso
  */
 @SpringBootApplication
-public class ProgettoApplication {
+public class ProgettoApplication{
 
 	/**metodo principale del programma dal quale viene eseguito springboot
 	 * @param args contiene gli argomenti forniti insieme all' esecuzione del jar
-	 * @throws MalformedURLException:eccezione che gestisce la validità dell' url
+	 *
 	 */
-	public static void main(String[] args) throws MalformedURLException, FolderNotFoundException {
+	public static void main(String[] args) throws MalformedURLException{
 		System.out.println("Inserisci il path della Cartella da esaminare: ");
 		Scanner input=new Scanner(System.in);
 		String path=input.nextLine();
@@ -34,6 +34,9 @@ public class ProgettoApplication {
 			SpringApplication.run(ProgettoApplication.class, args);}
 		} catch(FolderNotFoundException e){
 			System.out.println("il percorso inserito non è valido: " + e.path);
+		}
+		catch(MalformedURLException e ){
+			e.printStackTrace();
 		}
 
 	}

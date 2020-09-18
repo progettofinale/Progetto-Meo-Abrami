@@ -39,6 +39,7 @@ public class DataBase {
      * @param tipo      String: tipo del file
      * @param altezza   int: altezza
      * @param lunghezza int: lunghezza
+     * @param durata Long: durata
      */
     public DataBase(String nome, String modifica, Long size, String tipo, int altezza, int lunghezza, long  durata) {
         this.nome = nome;

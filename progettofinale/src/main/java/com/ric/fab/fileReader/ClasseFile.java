@@ -22,13 +22,13 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;*/
 
-/**<h1>ClasseFile</h1>
+/**ClasseFile
  * stabilisce le connessioni alle api di dropbox e salva i risultati nei database
  */
 public class ClasseFile {
 
     /**stabilisce le connessioni alle api di dropbox e salva i risultati nei database
-     * @throws MalformedURLException: eccezione che gestisce la validità dell' url
+     *
      */
     public ClasseFile() throws MalformedURLException {
         String url = "https://api.dropboxapi.com/2/files/list_folder";
