@@ -36,6 +36,9 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
 	 
    <blockquote><p><strong>POST</strong>/infofile/{/nomefile}</blockquote>
     /infofile restituisce le informazioni del file
+    
+   <blockquote><p><strong>POST</strong>/statsfile/media/dimensioni</blockquote>
+    /statsfile restituisce peso, altezza, lunghezza e durata degli elementi
   
   </div> </div>
   
