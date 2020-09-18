@@ -56,8 +56,8 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
    
 ### Class diagram
 ![UML](https://github.com/progettofinale/Progetto-Meo-Abrami/blob/master/class%20diagram%20JPG2.jpg)
-### Use case diagram
-![UML](https://github.com/progettofinale/Progetto-Meo-Abrami/blob/master/sequence%20prgram%20%20JPG2.jpg)
 ### Sequence diagram
-![UML]()
+![UML](https://github.com/progettofinale/Progetto-Meo-Abrami/blob/master/sequence%20prgram%20%20JPG2.jpg)
+### Us case diagram
+![UML](https://github.com/progettofinale/Progetto-Meo-Abrami/blob/master/us%20case%20diagram2.jpg)
     
