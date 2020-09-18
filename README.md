@@ -25,7 +25,7 @@ Un esempio di richiesta con filtro è il seguente:post /data/filter={"$eq":"phot
 },
 ecc..
 </code></pre>
-Altre opzioni di rotte con filtri sono:   post /data/filter={"$not":"photo"}
+Altre opzioni di rotte con filtri sono:   post /data/filter={"$not":"photo"} , 
                                           post /data/foto/sizes/filter={"$gt":3}
 
 
