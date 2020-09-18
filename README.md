@@ -55,7 +55,7 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
    <b> UML </b>
    
 ### Class diagram
-![UML]()
+![UML](https://github.com/progettofinale/Progetto-Meo-Abrami/blob/master/class%20diagram%20JPG2.jpg)
 ### Use case diagram
 ![UML]()
 ### Sequence diagram
