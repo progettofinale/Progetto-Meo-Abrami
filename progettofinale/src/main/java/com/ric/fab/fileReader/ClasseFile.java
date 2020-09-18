@@ -22,9 +22,15 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;*/
 
+/**<h1>ClasseFile</h1>
+ * stabilisce le connessioni alle api di dropbox e salva i risultati nei database
+ */
 public class ClasseFile {
 
-    public ClasseFile() throws MalformedURLException {System.out.println("start");
+    /**stabilisce le connessioni alle api di dropbox e salva i risultati nei database
+     * @throws MalformedURLException: eccezione che gestisce la validità dell' url
+     */
+    public ClasseFile() throws MalformedURLException {
         String url = "https://api.dropboxapi.com/2/files/list_folder";
         String body = "{\r\n" + "    \"path\": \"" + Utils.getPath() + "\",\r\n" + "    \"recursive\": false,\r\n"
                 + "    \"include_media_info\": true,\r\n" + "    \"include_deleted\": false,\r\n"
@@ -34,38 +40,24 @@ public class ClasseFile {
 
         Utils.lettoreFile(url, body);
 
- /*       System.out.println("startFolder");
-if(FolderData.getFolderDataList().size()!=0)
-        for (FolderData folder:FolderData.getFolderDataList()
-             ) {
+        int i=0;
+        FolderData folder;
+        String arrow="->";
+        while (i<Utils.getFolderFinded()){
+            if(i>FolderData.getFolderDataList().size()){System.out.println("break");break;}
             String http = "https://api.dropboxapi.com/2/files/list_folder";
-
+            folder=FolderData.getFolderDataList().get(i);
+            System.out.println(arrow+folder.getPath());
             body="{\r\n" + "    \"path\": \""+folder.getPath()+"\",\r\n" + "    \"recursive\": false,\r\n"
                     + "    \"include_media_info\": false,\r\n" + "    \"include_deleted\": false,\r\n"
                     + "    \"include_has_explicit_shared_members\": false,\r\n"
                     + "    \"include_mounted_folders\": true,\r\n" + "    \"include_non_downloadable_files\": true\r\n"
                     + "}";
             Utils.lettoreFile(http,body);
-        }*/
-    int i=0;
-    FolderData folder;
-    while (i<Utils.getFolderFinded()){
-        if(i>FolderData.getFolderDataList().size()){System.out.println("break");break;}
-        String http = "https://api.dropboxapi.com/2/files/list_folder";
-        folder=FolderData.getFolderDataList().get(i);
+            i++;
+        }
 
-        System.out.println(folder.getPath());
-
-        body="{\r\n" + "    \"path\": \""+folder.getPath()+"\",\r\n" + "    \"recursive\": false,\r\n"
-                + "    \"include_media_info\": false,\r\n" + "    \"include_deleted\": false,\r\n"
-                + "    \"include_has_explicit_shared_members\": false,\r\n"
-                + "    \"include_mounted_folders\": true,\r\n" + "    \"include_non_downloadable_files\": true\r\n"
-                + "}";
-        Utils.lettoreFile(http,body);
-        i++;
-    }
-
-        System.out.println("startFile");
+        System.out.println("--> "+FileData.getFileDataList().size()+" Elementi Trovati\nEsamino i loro contenuti");
         for (FileData file : FileData.getFileDataList()
         ) {
             String http = "https://api.dropboxapi.com/2/files/get_metadata";
@@ -103,7 +95,8 @@ if(FolderData.getFolderDataList().size()!=0)
                     String name = je9.getAsString();
                     JsonElement je10 = all.get("client_modified");
                     JsonElement je3 = all.get("size");
-                    if(name.matches("(\\.jpeg|\\.png|\\.jpg)$")) {
+
+                    if(name.substring(name.length()-4,name.length()).equals(".png")||name.substring(name.length()-4,name.length()).equals("jpeg")||name.substring(name.length()-4,name.length()).equals(".jpg")) {
 
                         JsonElement je4 = all.get("media_info");
                         JsonObject media = je4.getAsJsonObject();
@@ -119,17 +112,42 @@ if(FolderData.getFolderDataList().size()!=0)
                         int width = je11.getAsInt();
                         Long size = je3.getAsLong();
                         String lastMod = je10.getAsString();
-                        DataBase.getDataBaseList().add(new DataBase(name, lastMod, size, type, height, width));
+                        DataBase.getDataBaseList().add(new DataBase(name, lastMod, size, type, height, width,0));
                     }
-                    Long size = je3.getAsLong();
-                    String lastMod = je10.getAsString();
+                    else if(name.substring(name.length()-4,name.length()).equals(".mp4")){
+                        JsonElement je4 = all.get("media_info");
+                        JsonObject media = je4.getAsJsonObject();
+                        JsonElement je8 = media.get("metadata");
+                        JsonObject metadata = je8.getAsJsonObject();
+                        JsonElement je5 = metadata.get(".tag");
+                        JsonElement je6 = metadata.get("dimensions");
+                        JsonObject dimensions = je6.getAsJsonObject();
+                        JsonElement je7 = dimensions.get("height");
+                        JsonElement je11 = dimensions.get("width");
+                        JsonElement je21 = metadata.get("duration");
+                        long duration= je21.getAsLong();
+                        String type = je5.getAsString();
+                        int height = je7.getAsInt();
+                        int width = je11.getAsInt();
+                        Long size = je3.getAsLong();
+                        String lastMod = je10.getAsString();
+                        DataBase.getDataBaseList().add(new DataBase(name, lastMod, size, type, height, width, duration));
 
-                    DataBase.getDataBaseList().add(new DataBase(name, lastMod, size, "file di testo", 0, 0));
-                    System.out.println("nome file "+name);
+                    }
+                    else{
+                        Long size = je3.getAsLong();
+                        String lastMod = je10.getAsString();
+
+                        DataBase.getDataBaseList().add(new DataBase(name, lastMod, size, "file di testo", 0, 0, 0));
+
+                    }
+
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+
     }
+
 }
