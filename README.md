@@ -46,7 +46,7 @@ Nello specifico il formato di ogni singolo elemento è il seguente:</p>
      ...
      
 
-##UML
+##UML <br>
 
 ### Class diagram
 ![UML]()
