@@ -47,15 +47,24 @@ Altre opzioni di rotte con filtri sono:   post /data/filter={"$not":"photo"} ,
    <blockquote> <p><strong>POST</strong>/data/{filtro per il tipo}</blockquote>
     /data restituisce tutti gli elementi del database del tipo richiesto
     
-  <blockquote><p><strong>POST</strong>/data/{filtro per il tipo}/sizes/{filtro per la dimensione}</blockquote>
-         /data restituisce tutti gli elementi del database del tipo richiesto con le dimensioni indicate </blockquote>
+  <blockquote><p><strong>POST</strong>/data/photo/sizes/{filtrosize}</blockquote>
+         /dataphotosize restituisce tutti gli elementi del database del tipo richiesto con le dimensioni indicate </blockquote>
 	 
    <blockquote><p><strong>POST</strong>/infofile/{/nomefile}</blockquote>
     /infofile restituisce le informazioni del file
     
    <blockquote><p><strong>POST</strong>/statsfile/media/dimensioni</blockquote>
     /statsfile restituisce peso, altezza, lunghezza e durata degli elementi
-  
+    
+   <blockquote><p><strong>POST</strong>/trovamaxemin</blockquote>
+    /trovamaxemin restituisce il massimo e il minimo
+    
+   <blockquote><p><strong>POST</strong>/data/video</blockquote>
+    /datavideo restituisce tutti i video del database 
+    
+   <blockquote><p><strong>POST</strong>/data/fileditesto</blockquote>
+    /datafileditesto restituisce tutti i video del database
+    
   </div> </div>
   
   ## Utilizzo <br>
