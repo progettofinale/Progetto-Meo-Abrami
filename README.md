@@ -4,7 +4,7 @@ Progettofinle è un'applicazione Java per controllare il contenuto di un Dropbox
 In seguito a una richiesta al servizio i risultati vengono rappresanti mediante un json come un array di oggetti che rappresentano i dati appartenenti al dataset.<br>
 Nello specifico il formato di ogni singolo elemento è il seguente:</p>
 <pre><code>{
-"nome":"img001.jpeg",
+        "nome":"img001.jpeg",
 	"tipo":"photo",
 	"size":86863,
 	"modifica":"2019-10-12T09:57:15Z",
